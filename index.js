@@ -10,6 +10,7 @@ module.exports = async function (context, req) {
 
     if (!shaSignature.localeCompare(gitHubSignature)) {
         if (req.body.pages[0].title) {
+            // alot can be done here for example send a text or something anything.....a counter on rpi or a save in the db.... anything
             context.res = {
                 body: "Page is " + req.body.pages[0].title + ", Action is " + req.body.pages[0].action + ", Event Type is " + req.headers['x-github-event']
             };
